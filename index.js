@@ -30,6 +30,8 @@ tipOptions.forEach(tip => {
         prevButton = e.target;
     
         desiredTip = Number(e.target.dataset.tip);
+
+        calculate();
     
     });
     
@@ -50,39 +52,18 @@ customTip.addEventListener("input", (e) => {
 
 document.addEventListener("keyup", (e) => {
 
-    if(numberOfPeopleInput.value === 0 || numberOfPeopleInput.value === ''){
-        warning.style.opacity = "100";
-    }
-    else{
-        warning.style.opacity = "0";
-        calculate();
-
-    };
-
     if(desiredTip !== 0)
         calculate();
     
     return;
 });
 
-document.addEventListener("click", (e) => {
-    
-    if(numberOfPeopleInput.value === 0 || numberOfPeopleInput.value === ''){
-        warning.style.opacity = "100";
-    }
-    else{
-        warning.style.opacity = "0";
-        calculate();
+resetButton.addEventListener("click", reset);
 
-    };
 
-    if(resetButton.activeElement = true && resetButton.classList.contains("btn-active")){
-        reset();
-    }
-
-});
 
 function calculate(){
+
 
     totalTipPerPerson = ((billAmountInput.value / numberOfPeopleInput.value) * (desiredTip / 100)).toFixed(2);
     totalBillPerPerson = (Number(totalTipPerPerson) + (billAmountInput.value / numberOfPeopleInput.value)).toFixed(2);
@@ -93,45 +74,31 @@ function calculate(){
         totalBillPerPersonSpan.textContent = "0.00";
         tipAmountPerPersonSpan.textContent = "0.00";
         
+        
     }
 
     else{
         totalBillPerPersonSpan.textContent = totalBillPerPerson;
         tipAmountPerPersonSpan.textContent = totalTipPerPerson;
+        resetButton.classList.add("btn-active") 
     }
-
-    if(totalBillPerPerson > 0 && totalTipPerPerson > 0){
-        resetButton.classList.add("btn-active");
-    }
-
-    else{
-        resetButton.classList.remove("btn-active"); 
-    }
-
-
 
 };
 
 function reset(){
+    
+        resetButton.classList.remove("btn-active")
+        totalBillPerPersonSpan.textContent = "0.00";
+        tipAmountPerPersonSpan.textContent = "0.00";
 
-    resetButton.addEventListener("click", (e) =>{
+        billAmountInput.value = '';
+        numberOfPeopleInput.value = '';
 
-        if(resetButton.classList.contains("btn-active")){
-            totalBillPerPersonSpan.textContent = "0.00";
-            tipAmountPerPersonSpan.textContent = "0.00";
+        customTip.value = '';
+        desiredTip = 0;
 
-            billAmountInput.value = '';
-            numberOfPeopleInput.value = '';
-
-            customTip.value = '';
-            desiredTip = 0;
-
-            tipOptions.forEach(tip => {
-                tip.classList.remove("btn-active");
-            })
-        }
-
-        
-    });
+        tipOptions.forEach(tip => {
+            tip.classList.remove("btn-active");
+        });   
 
 };
