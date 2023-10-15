@@ -16,10 +16,18 @@ let desiredTip;
 let totalTipPerPerson;
 let totalBillPerPerson;
 
+
     
 tipOptions.forEach(tip => {
     
     tip.addEventListener("click", (e) => {
+
+        if(numberOfPeopleInput.value === "0" || numberOfPeopleInput.value === ""){
+            warning.style.opacity = "100";
+        }else{
+            warning.style.opacity = "0";
+        }
+        
     
         e.target.classList.add("btn-active");
     
@@ -39,6 +47,13 @@ tipOptions.forEach(tip => {
 
 customTip.addEventListener("input", (e) => {
 
+    if(numberOfPeopleInput.value === "0" || numberOfPeopleInput.value === ""){
+        warning.style.opacity = "100";
+    }else{
+        warning.style.opacity = "0";
+    }
+    
+
 
     if (document.activeElement.classList.contains("custom-tip")) {
         tipOptions.forEach(tip => {
@@ -51,6 +66,13 @@ customTip.addEventListener("input", (e) => {
 });
 
 document.addEventListener("keyup", (e) => {
+
+    if(numberOfPeopleInput.value === "0" || numberOfPeopleInput.value === ""){
+        warning.style.opacity = "100";
+    }else{
+        warning.style.opacity = "0";
+    }
+    
 
     if(desiredTip !== 0)
         calculate();
@@ -88,6 +110,7 @@ function calculate(){
 function reset(){
     
         resetButton.classList.remove("btn-active")
+        warning.style.opacity = "0";
         totalBillPerPersonSpan.textContent = "0.00";
         tipAmountPerPersonSpan.textContent = "0.00";
 

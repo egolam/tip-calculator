@@ -1,0 +1,16 @@
+tipOptions.forEach(tip => {
+    
+    tip.addEventListener("click", (e) => {
+    
+        e.target.classList.add("btn-active");
+    
+        if (prevButton !== null) {
+            prevButton?.classList.remove("btn-active");
+        }
+    
+        prevButton = e.target;
+    
+        desiredTip = Number(e.target.dataset.tip);
+
+    
+    });
