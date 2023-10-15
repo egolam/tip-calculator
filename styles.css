@@ -1,0 +1,255 @@
+:root{
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-gray-cyan: hsl(186, 14%, 43%);
+    --gray-cyan: hsl(184, 14%, 56%);
+    --light-gray-cyan: hsl(185, 41%, 84%);
+    --very-light-gray-cyan: hsl(189, 41%, 97%);
+    --primary: hsl(172, 67%, 45%);
+    --pure-white: #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+.pad-6{
+    padding: 6px;
+}
+
+.text-s{
+    font-size: 13px;
+}
+
+.text-m{
+    font-size: 16px;
+}
+
+.text-xl{
+    font-size: 48px;
+}
+
+.text-white{
+    color: var(--pure-white);
+}
+
+.divider{
+    color: var(--gray-cyan);
+}
+
+body{
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-gray-cyan);
+}
+
+input{
+    background-color: var(--very-light-gray-cyan);
+    text-align: right;
+    border-radius: 8px;
+    border: none;
+}
+
+input::placeholder{
+    color: #7F9D9F;
+}
+
+input:hover , input:focus{
+    outline: transparent;
+    box-shadow: 0 0 0 2px var(--primary);
+}   
+
+main{
+    display: flex;
+    gap: 32px;
+    padding: 32px;
+    font-size: 24px;
+    background-color: var(--pure-white);
+    border-radius: 24px;
+    max-width: 920px;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.40);
+    overflow: hidden;
+}
+
+label{
+    color: var(--dark-gray-cyan);
+}
+
+.input-section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.result-section{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-dark-cyan);
+    border-radius: 16px;
+    padding: 40px;
+    gap: 24px;
+}
+
+.reset-btn{
+    margin-top: auto;
+    padding: 8px 0;
+    border-radius: 4px;
+    border: none;
+    font-size: 20px;
+}
+
+.btn-passive{
+    color: var(--very-dark-cyan);
+    background-color: #0D686D;
+}
+
+.btn-active{
+    color: var(--very-dark-cyan) !important;
+    background-color: var(--primary) !important;
+    cursor: pointer;
+}
+
+.btn-active:hover{
+    background-color: var(--light-gray-cyan) !important;
+}
+
+.btn-active:active{
+    scale: 0.96;
+}
+
+.input-section__bill{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+}
+
+.input-section__bill input{
+    color: var(--very-dark-cyan);
+    padding-right: 16px;
+}
+
+i{
+    color: var(--gray-cyan);
+    position: absolute;
+    margin-top: 46px;
+    margin-left: 16px;
+    font-size: 16px;
+}
+
+.input-section__tip-selection{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tip-options{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    text-align: center;
+}
+
+.tip-options > span{
+    background-color: var(--very-dark-cyan);
+    color: var(--pure-white);
+    border-radius: 4px;
+}
+
+.tip-percent-btn:hover{
+    color: var(--very-dark-cyan);
+    background-color: var(--primary);
+    cursor: pointer;
+}
+
+.tip-options input{
+    width: 100%;
+    text-align: center;
+    color: var(--very-dark-cyan);
+}
+
+.tip-options input::placeholder{
+    color: #547878;
+}
+
+.input-section__numofpeople{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-section__numofpeople input{
+    color: var(--very-dark-cyan);
+    padding-right: 16px;
+}
+
+.warning-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.warning{
+    opacity: 0;
+    font-style: normal;
+    color: rgba(255, 0, 0, 0.6);
+}
+
+.tip-amount{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;     
+}
+
+.result-section p{
+    color: var(--primary);
+}
+
+.tip-amount-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.total-tip{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total-tip-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 376px) {
+
+    
+    main{
+        flex-direction: column;
+        zoom: 0.8;
+    }
+
+    .result-section{
+        width: 100%;
+    }
+
+    .input-section{
+        width: 100%;
+    }
+
+
+
+}

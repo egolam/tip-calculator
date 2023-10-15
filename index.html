@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Tip calculator app</title>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+
+
+
+<body>
+
+  
+
+  <main>
+    <section class="input-section">
+
+      <article class="input-section__bill">
+        <label for="bill" class="text-m">Bill</label>
+        <i class="fa-solid fa-dollar-sign"></i><input type="number" name="bill" id="bill" class="pad-6" placeholder="0">
+      </article>
+
+      <article class="input-section__tip-selection">
+        
+        <label class="text-m">Select Tip %</label>
+        
+        <div class="tip-options">
+          <span class="tip-percent-btn tips pad-6" data-tip="5">5%</span>
+          <span class="tip-percent-btn tips pad-6" data-tip="10">10%</span>
+          <span class="tip-percent-btn tips pad-6" data-tip="15">15%</span>
+          <span class="tip-percent-btn tips pad-6" data-tip="25">25%</span>
+          <span class="tip-percent-btn tips pad-6" data-tip="50">50%</span>
+          <input type="number" placeholder="Custom" class="pad-6 custom-tip">   
+        </div>  
+      </article>
+
+      <article class="input-section__numofpeople">
+        <div class="warning-wrapper">
+          <label for="numofpeople" class="text-m">Number of People</label>
+          <p class="warning text-m">Can't be zero!</p>
+        </div> 
+        <i class="fa-solid fa-user"></i><input type="number" name="numofpeople" id="numofpeople" class="pad-6" placeholder="0">
+      </article>
+
+    </section>
+
+    <section class="result-section">
+
+      <article class="tip-amount">
+
+        <div class="tip-amount-wrapper">
+          <h3 class="text-m text-white">Tip Amount</h3>
+          <span class="text-s divider">/ person</span>
+        </div>
+
+        <p class="text-xl">$<span class="tip-amount__per-person text-xl">0.00</span></p>
+
+      </article>
+      <article class="total-tip">
+
+        <div class="total-tip-wrapper">
+          <h3 class="text-m text-white">Total</h3>
+          <span class="text-s divider">/ person</span>
+        </div>
+
+        <p class="text-xl">$<span class="total-tip__per-person text-xl">0.00</span></p>
+
+      </article>
+    
+      <button class="reset-btn btn-passive">RESET</button>
+
+    </section>
+  </main>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
